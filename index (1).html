@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>রক্তবন্ধু – জরুরি রক্তদাতা নেটওয়ার্ক</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F7F4;--card:#fff;--ink:#17231F;--mute:#5E6B66;--red:#C4122F;--redtxt:#fff;--green:#0F5B45;--line:#DCE3DE;--okbg:#E2F2EA;--nobg:#F1E4E4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101614;--card:#18211E;--ink:#EAF0EC;--mute:#9AA8A1;--red:#E0334C;--green:#4FC09A;--line:#2A3732;--okbg:#14352B;--nobg:#3A1D22}}
+:root[data-theme="dark"]{--bg:#101614;--card:#18211E;--ink:#EAF0EC;--mute:#9AA8A1;--red:#E0334C;--green:#4FC09A;--line:#2A3732;--okbg:#14352B;--nobg:#3A1D22}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hind Siliguri",system-ui,sans-serif;font-size:16px;line-height:1.5;padding-bottom:76px}
+main{max-width:520px;margin:0 auto;padding:16px}
+h1{font-size:26px;margin:4px 0 2px;font-weight:700}
+h2{font-size:19px;margin:0 0 10px}
+p{margin:0}.mute{color:var(--mute);font-size:14px}
+.sos{display:block;width:100%;background:var(--red);color:var(--redtxt);border:0;border-radius:18px;padding:18px;font:700 20px inherit;font-family:inherit;margin:16px 0}
+.sos small{display:block;font-weight:400;font-size:14px;opacity:.9}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;min-width:56px;padding:8px 10px;font:700 17px inherit;font-family:inherit}
+.chip.on{background:var(--red);border-color:var(--red);color:var(--redtxt)}
+label{display:block;font-weight:500;margin:10px 0 4px}
+input,select{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:16px inherit;font-family:inherit}
+.btn{width:100%;margin-top:14px;padding:14px;border:0;border-radius:12px;background:var(--green);color:var(--bg);font:700 17px inherit;font-family:inherit}
+.row{display:flex;align-items:center;gap:12px}
+.bg{flex:none;width:52px;height:52px;border-radius:50%;background:var(--red);color:var(--redtxt);display:grid;place-items:center;font-weight:700;font-size:18px}
+.grow{flex:1;min-width:0}.name{font-weight:700}
+.tag{display:inline-block;font-size:13px;padding:1px 8px;border-radius:20px;margin-top:2px}
+.ok{background:var(--okbg);color:var(--green)}.no{background:var(--nobg);color:var(--red)}
+.call{flex:none;text-decoration:none;background:var(--green);color:var(--bg);padding:10px 14px;border-radius:10px;font-weight:700}
+.call.off{background:var(--line);color:var(--mute);pointer-events:none}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;border:0;background:none;color:var(--mute);padding:12px 4px;font:500 14px inherit;font-family:inherit}
+nav button.on{color:var(--red);font-weight:700}
+.view{display:none}.view.on{display:block}
+.toast{background:var(--okbg);color:var(--green);border-radius:12px;padding:12px;margin-top:12px;display:none}
+.badge{font-size:12px;color:var(--green);font-weight:700}
+.hero{background:linear-gradient(150deg,#A80E27,#D6203B);color:#fff;border-radius:22px;padding:22px 18px;text-align:center;margin-bottom:12px}
+.hero svg{width:84px;height:84px;background:#fff;border-radius:50%;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.hero h1{margin:10px 0 2px;font-size:32px}.hero p{opacity:.92;font-size:15px}
+.stats{display:flex;gap:8px;margin-bottom:6px}
+.stats div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 4px;text-align:center}
+.stats b{display:block;font-size:22px;color:var(--red)}.stats span{font-size:13px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.grid button{border:1.5px solid var(--line);background:var(--card);color:var(--red);border-radius:12px;padding:14px 0;font:700 20px inherit;font-family:inherit}
+.tips{margin:0;padding-left:20px}.tips li{margin-bottom:6px}
+.step{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+.step i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--green);color:var(--bg);display:grid;place-items:center;font-style:normal;font-weight:700}
+</style>
+</head>
+<body>
+<main>
+<section id="home" class="view on">
+  <div class="hero"><svg viewBox="0 0 64 64" aria-label="রক্তবন্ধু লোগো"><path d="M32 4C32 4 12 28 12 41a20 20 0 0 0 40 0C52 28 32 4 32 4Z" fill="#C4122F"/><path d="M32 54C23 47 19 42 19 38a6.5 6.5 0 0 1 13-2.5A6.5 6.5 0 0 1 45 38c0 4-4 9-13 16Z" fill="#fff"/></svg><h1>রক্তবন্ধু</h1>
+  <p>বিপদের সময় পাশে আছে রক্তবন্ধু</p></div>
+  <div class="stats"><div><b id="s1">০</b><span>নিবন্ধিত দাতা</span></div><div><b id="s2">০</b><span>এখন দিতে পারবেন</span></div><div><b>৮</b><span>বিভাগ</span></div></div>
+  <div id="auth" class="card row"></div>
+  <button class="sos" onclick="go('alert')">জরুরি রক্ত দরকার<small>আশেপাশের মিলে যাওয়া সব দাতার কাছে একসাথে বার্তা যাবে</small></button>
+  <div class="card"><h2>রক্তদাতা খুঁজুন</h2><p class="mute">রক্তের গ্রুপ ও বিভাগ বেছে নিন</p><button class="btn" onclick="go('find')">খুঁজতে যান</button></div>
+  <div class="card"><h2>রক্ত দিতে চান?</h2><p class="mute">নাম লিখুন, কেউ বিপদে পড়লে আপনাকে ডাকবে</p><button class="btn" onclick="go('reg')">দাতা হিসেবে নাম লিখুন</button></div>
+  <div class="card"><h2>গ্রুপ ধরে দ্রুত খুঁজুন</h2><div class="grid" id="qg"></div></div>
+  <div class="card"><h2>কীভাবে কাজ করে</h2>
+    <div class="step"><i>১</i><p>দাতা নিজের গ্রুপ ও এলাকা দিয়ে নাম লেখেন</p></div>
+    <div class="step"><i>২</i><p>কারও রক্ত লাগলে অনুরোধ প্রকাশ করুন বা সরাসরি খোঁজেন</p></div>
+    <div class="step" style="margin-bottom:0"><i>৩</i><p>মিলে যাওয়া দাতা সাড়া দেন, এক ট্যাপে কল করা যায়</p></div></div>
+  <div class="card"><h2>কে রক্ত দিতে পারেন</h2><ul class="tips"><li>বয়স ১৮ থেকে ৬০ বছর</li><li>ওজন ৫০ কেজি বা তার বেশি</li><li>আগের রক্তদানের পর কমপক্ষে ৩–৪ মাস পার হয়েছে</li><li>সুস্থ আছেন, জ্বর বা সংক্রমণ নেই</li></ul></div>
+  <div class="card"><h2>জেনে রাখুন</h2><p><b>O-</b> গ্রুপের রক্ত প্রায় সবাইকে দেওয়া যায়, আর <b>AB+</b> গ্রুপের মানুষ প্রায় সবার কাছ থেকে নিতে পারেন। তবে হাসপাতাল সবসময় ক্রসম্যাচ করে নেয়।</p></div>
+  <div class="card"><h2>জরুরি নম্বর</h2><p class="mute">অ্যাম্বুলেন্স ও জাতীয় জরুরি সেবা: <b>999</b></p></div>
+</section>
+
+<section id="find" class="view">
+  <h2>রক্তদাতা খুঁজুন</h2>
+  <div class="chips" id="fg"></div>
+  <label for="fd">বিভাগ</label><select id="fd"></select>
+  <p class="mute" id="cnt" style="margin:14px 0 8px"></p>
+  <div id="list"></div>
+</section>
+
+<section id="reg" class="view">
+  <h2>দাতা হিসেবে নাম লিখুন</h2>
+  <label for="rn">নাম</label><input id="rn" placeholder="আপনার নাম">
+  <label>রক্তের গ্রুপ</label><div class="chips" id="rg"></div>
+  <label for="rd">বিভাগ</label><select id="rd"></select>
+  <label for="rp">ফোন নম্বর</label><input id="rp" type="tel" inputmode="numeric" placeholder="01XXXXXXXXX">
+  <label for="rl">শেষ রক্তদান (না দিলে ফাঁকা রাখুন)</label><input id="rl" type="date">
+  <p class="mute" style="margin-top:10px">আপনার নম্বর শুধু নিবন্ধিত ব্যবহারকারীরা দেখতে পাবেন।</p>
+  <button class="btn" onclick="register()">নিবন্ধন করুন</button>
+  <div class="toast" id="rt"></div>
+</section>
+
+<section id="alert" class="view">
+  <h2>জরুরি রক্তের অনুরোধ</h2>
+  <label>কোন গ্রুপ লাগবে</label><div class="chips" id="ag"></div>
+  <label for="ad">বিভাগ</label><select id="ad"></select>
+  <label for="ah">হাসপাতালের নাম</label><input id="ah" placeholder="যেমন: ঢাকা মেডিকেল কলেজ হাসপাতাল">
+  <label for="ap">যোগাযোগের নম্বর</label><input id="ap" type="tel" inputmode="numeric" placeholder="01XXXXXXXXX">
+  <button class="btn" style="background:var(--red);color:#fff" onclick="sendAlert()">অনুরোধ প্রকাশ করুন</button>
+  <div class="toast" id="at"></div>
+  <h2 style="margin-top:22px">চলমান জরুরি অনুরোধ</h2><div id="alist"></div>
+</section>
+</main>
+
+<nav>
+  <button data-v="home" class="on" onclick="go('home')">হোম</button>
+  <button data-v="find" onclick="go('find')">খুঁজুন</button>
+  <button data-v="alert" onclick="go('alert')">জরুরি</button>
+  <button data-v="reg" onclick="go('reg')">নাম লিখুন</button>
+</nav>
+
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {getAuth,GoogleAuthProvider,signInWithPopup,signOut,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {getFirestore,collection,doc,setDoc,addDoc,onSnapshot,query,orderBy,limit,serverTimestamp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const app=initializeApp({
+  apiKey:"AIzaSyA8HeLsPiVACmXiP5jfmSGHPeekSWhNRq0",
+  authDomain:"roktobondhu-7009f.firebaseapp.com",
+  projectId:"roktobondhu-7009f",
+  storageBucket:"roktobondhu-7009f.firebasestorage.app",
+  messagingSenderId:"223977775662",
+  appId:"1:223977775662:web:8c18255cab8fa64b1775bf"
+});
+const auth=getAuth(app),db=getFirestore(app);
+var G=["A+","A-","B+","B-","O+","O-","AB+","AB-"];
+var D=["ঢাকা","চট্টগ্রাম","রাজশাহী","খুলনা","বরিশাল","সিলেট","রংপুর","ময়মনসিংহ"];
+var donors=[],alerts=[],user=null,sel={f:null,r:null,a:null};
+function $(i){return document.getElementById(i)}
+function bn(x){return String(x).replace(/\d/g,function(d){return"০১২৩৪৫৬৭৮৯"[d]})}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function can(l){return !l||(Date.now()-new Date(l).getTime())/864e5>=90}
+function callBtn(p,ok){
+  if(!ok)return'<span class="call off">কল</span>';
+  if(!user)return'<a class="call" href="#" onclick="login();return false">লগইন</a>';
+  return'<a class="call" href="tel:'+esc(p)+'">কল</a>';
+}
+function chips(id,key,cb){
+  $(id).innerHTML=G.map(function(g){return'<button type="button" class="chip" data-g="'+g+'">'+g+'</button>'}).join("");
+  $(id).onclick=function(e){var g=e.target.getAttribute("data-g");if(!g)return;
+    sel[key]=(sel[key]===g&&key==="f")?null:g;
+    Array.prototype.forEach.call($(id).children,function(c){c.classList.toggle("on",c.getAttribute("data-g")===sel[key])});
+    if(cb)cb()}
+}
+["fd","rd","ad"].forEach(function(id){
+  $(id).innerHTML=(id==="fd"?'<option value="">সব বিভাগ</option>':'')+D.map(function(d){return'<option>'+d+'</option>'}).join("");
+});
+function render(){
+  var r=donors.filter(function(x){return(!sel.f||x.g===sel.f)&&(!$("fd").value||x.d===$("fd").value)});
+  r.sort(function(a,b){return can(b.l)-can(a.l)});
+  $("cnt").textContent=bn(r.length)+" জন দাতা পাওয়া গেছে";
+  $("list").innerHTML=r.length?r.map(function(x){var ok=can(x.l);
+    return'<div class="card row"><div class="bg">'+esc(x.g)+'</div><div class="grow"><div class="name">'+esc(x.n)+(x.c>=3?' <span class="badge">✔ যাচাইকৃত</span>':'')+'</div><div class="mute">'+esc(x.d)+'</div><span class="tag '+(ok?'ok':'no')+'">'+(ok?'এখন দিতে পারবেন':'সম্প্রতি রক্ত দিয়েছেন')+'</span></div>'+callBtn(x.p,ok)+'</div>'}).join(""):'<div class="card mute">এই গ্রুপে এখনো কেউ নাম লেখাননি। অন্য বিভাগ বা গ্রুপ দিয়ে দেখুন, অথবা জরুরি অনুরোধ পাঠান।</div>';
+}
+function renderAlerts(){
+  $("alist").innerHTML=alerts.length?alerts.map(function(a){
+    return'<div class="card row"><div class="bg">'+esc(a.g)+'</div><div class="grow"><div class="name">'+esc(a.h)+'</div><div class="mute">'+esc(a.d)+' বিভাগ</div></div>'+callBtn(a.p,true)+'</div>'}).join(""):'<p class="mute">এখন কোনো চলমান অনুরোধ নেই।</p>';
+}
+function stats(){$("s1").textContent=bn(donors.length);$("s2").textContent=bn(donors.filter(function(x){return can(x.l)}).length)}
+function renderAuth(){
+  $("auth").innerHTML=user?'<div class="grow"><div class="name">স্বাগতম, '+esc(user.displayName||"বন্ধু")+'</div><div class="mute">আপনি লগইন আছেন</div></div><a class="call" href="#" onclick="logout();return false">বের হন</a>':'<div class="grow"><div class="name">দাতার নম্বর দেখতে লগইন করুন</div><div class="mute">নিরাপত্তার জন্য নম্বর শুধু লগইন করা ব্যবহারকারী দেখতে পান</div></div><a class="call" href="#" onclick="login();return false">লগইন</a>';
+}
+function go(v){
+  Array.prototype.forEach.call(document.querySelectorAll(".view"),function(s){s.classList.toggle("on",s.id===v)});
+  Array.prototype.forEach.call(document.querySelectorAll("nav button"),function(b){b.classList.toggle("on",b.getAttribute("data-v")===v)});
+  if(v==="find")render();
+  if(v==="home")stats();
+  window.scrollTo(0,0);
+}
+function show(id,msg){var t=$(id);t.textContent=msg;t.style.display="block"}
+async function login(){try{await signInWithPopup(auth,new GoogleAuthProvider())}catch(e){console.error(e);alert("লগইন হয়নি। আবার চেষ্টা করুন।")}}
+function logout(){signOut(auth)}
+async function register(){
+  var n=$("rn").value.trim(),p=$("rp").value.trim();
+  if(!user){show("rt","আগে লগইন করুন।");login();return}
+  if(!n||!sel.r||!/^01\d{9}$/.test(p)){show("rt","নাম, রক্তের গ্রুপ ও সঠিক ১১ সংখ্যার নম্বর দিন।");return}
+  try{
+    await setDoc(doc(db,"donors",user.uid),{n:n,g:sel.r,d:$("rd").value,p:p,l:$("rl").value||"",c:$("rl").value?1:0},{merge:true});
+    show("rt","ধন্যবাদ, "+n+"! আপনি এখন দাতার তালিকায় আছেন।");
+  }catch(e){console.error(e);show("rt","সেভ হয়নি। আবার চেষ্টা করুন।")}
+}
+async function sendAlert(){
+  var p=$("ap").value.trim(),h=$("ah").value.trim();
+  if(!user){show("at","আগে লগইন করুন।");login();return}
+  if(!sel.a||!h||!/^01\d{9}$/.test(p)){show("at","রক্তের গ্রুপ, হাসপাতাল ও সঠিক নম্বর দিন।");return}
+  try{
+    await addDoc(collection(db,"alerts"),{g:sel.a,d:$("ad").value,h:h,p:p,t:serverTimestamp()});
+    var m=donors.filter(function(x){return x.g===sel.a&&x.d===$("ad").value&&can(x.l)}).length;
+    show("at","অনুরোধ প্রকাশিত হয়েছে। এই বিভাগে "+bn(m)+" জন উপযুক্ত দাতা আছেন, তারা নিচের তালিকায় দেখতে পাবেন।");
+  }catch(e){console.error(e);show("at","পাঠানো হয়নি। আবার চেষ্টা করুন।")}
+}
+function quick(g){sel.f=g;Array.prototype.forEach.call($("fg").children,function(c){c.classList.toggle("on",c.getAttribute("data-g")===g)});go("find")}
+chips("fg","f",render);chips("rg","r");chips("ag","a");
+$("qg").innerHTML=G.map(function(g){return'<button type="button" onclick="quick(\''+g+'\')">'+g+'</button>'}).join("");
+$("fd").onchange=render;
+onAuthStateChanged(auth,function(u){user=u;renderAuth();render();renderAlerts()});
+onSnapshot(collection(db,"donors"),function(s){donors=s.docs.map(function(d){return d.data()});stats();render()},function(e){console.error(e)});
+onSnapshot(query(collection(db,"alerts"),orderBy("t","desc"),limit(10)),function(s){alerts=s.docs.map(function(d){return d.data()});renderAlerts()},function(e){console.error(e)});
+Object.assign(window,{go:go,login:login,logout:logout,register:register,sendAlert:sendAlert,quick:quick});
+renderAuth();renderAlerts();
+</script>
+</body>
+</html>
